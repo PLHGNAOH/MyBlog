@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technical How-To on Internship Report</title>
+    <link>http://localhost:1313/workshop-template/categories/technical-how-to/</link>
+    <description>Recent content in Technical How-To on Internship Report</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/workshop-template/categories/technical-how-to/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xác minh hiệu quả dữ liệu Amazon S3 ở quy mô lớn với compute checksum operation</title>
+      <link>http://localhost:1313/workshop-template/3-blogstranslated/3.1-blog1/</link>
+      <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/workshop-template/3-blogstranslated/3.1-blog1/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Xác minh hiệu quả dữ liệu Amazon S3 ở quy mô lớn với compute checksum operation&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tác giả:&lt;/strong&gt; Fabio Lattanzi, Yanko Bolanos, và Nitish Pandey — 02/09/2025&lt;br&gt;&#xA;&lt;strong&gt;Chuyên mục:&lt;/strong&gt; Advanced (300), Amazon Athena, Amazon Simple Storage Service (S3), AWS Identity and Access Management (IAM), AWS Key Management Service, Technical How-to&lt;/p&gt;&#xA;&lt;p&gt;Các tổ chức trong mọi ngành nghề cần thường xuyên xác minh &lt;strong&gt;tính toàn vẹn&lt;/strong&gt; (integrity) của tập dữ liệu lưu trữ để bảo vệ thông tin giá trị, đáp ứng yêu cầu tuân thủ, và duy trì niềm tin. Khách hàng lĩnh vực &lt;strong&gt;media &amp;amp; entertainment&lt;/strong&gt; kiểm tra để đảm bảo nội dung không bị thay đổi; các tổ chức tài chính chạy &lt;strong&gt;bài kiểm tra tính toàn vẹn&lt;/strong&gt; để đáp ứng quy định; các viện nghiên cứu xác nhận &lt;strong&gt;tính tái lập&lt;/strong&gt; (reproducibility) của kết quả khoa học. Các hoạt động xác minh này rất quan trọng để duy trì &lt;strong&gt;audit trail&lt;/strong&gt; và &lt;strong&gt;chain of custody&lt;/strong&gt;, nhưng thường tốn tài nguyên. Trước đây, khách hàng phải tải về toàn bộ dữ liệu hoặc &lt;strong&gt;khôi phục&lt;/strong&gt; (restore) nội dung đã lưu trữ, tiêu tốn nhiều tài nguyên tính toán, thời gian và băng thông. Thách thức càng lớn với tài sản nặng như footage 4K/8K, ảnh y khoa, hoặc hàng tỷ object lưu trữ — làm tăng độ phức tạp vận hành và chi phí ở quy mô lớn.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
