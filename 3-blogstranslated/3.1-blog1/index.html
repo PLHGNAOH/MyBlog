@@ -15,21 +15,21 @@
     <title>Blog 1 :: Internship Report</title>
 
     
-    <link href="../../css/nucleus.css?1764908739" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1764908739" rel="stylesheet">
-    <link href="../../css/hybrid.css?1764908739" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1764908739" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1764908739" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1764908739" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1764908739" rel="stylesheet">
-    <link href="../../css/theme.css?1764908739" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1764908739" rel="stylesheet">
+    <link href="../../css/nucleus.css?1764911434" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1764911434" rel="stylesheet">
+    <link href="../../css/hybrid.css?1764911434" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1764911434" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1764911434" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1764911434" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1764911434" rel="stylesheet">
+    <link href="../../css/theme.css?1764911434" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1764911434" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1764908739" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1764911434" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1764908739"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1764911434"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1764908739"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1764908739"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1764911434"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1764911434"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/thienluhoan.github.io\/workshop-template\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1764908739"></script>
+<script type="text/javascript" src="../../js/search.js?1764911434"></script>
  
   </div>
 
@@ -960,6 +960,22 @@
     <li><a href="#4-retrieve-the-completion-report">4. Retrieve the Completion Report</a></li>
     <li><a href="#5-analyze-the-report-with-athena">5. Analyze the Report with Athena</a></li>
   </ul>
+
+  <ul>
+    <li><a href="#pre---31--">title: “Blog 1” date: 2025-01-01 weight: 1 chapter: false pre: &#34; <b> 3.1. </b> &#34;</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1-create-and-upload-the-manifest-1">1. Create and Upload the Manifest</a></li>
+    <li><a href="#2-configure-iam-permissions-1">2. Configure IAM Permissions</a>
+      <ul>
+        <li><a href="#required-permissions-include-1">Required permissions include:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-create-and-run-the-compute-checksum-job-1">3. Create and Run the Compute Checksum Job</a></li>
+    <li><a href="#4-retrieve-the-completion-report-1">4. Retrieve the Completion Report</a></li>
+    <li><a href="#5-analyze-the-report-with-athena-1">5. Analyze the Report with Athena</a></li>
+  </ul>
 </nav></div>
 </div>
 
@@ -1070,6 +1086,102 @@ The IAM role should be created using the <strong>S3 Batch Operations</strong> us
 <p>Any workload that relies on data correctness benefits from automated checksum validation.</p>
 <hr>
 <h1 id="conclusion">Conclusion</h1>
+<p>Amazon S3 Compute Checksum Operation provides an efficient, scalable, and cost-effective solution for verifying data integrity across massive datasets.<br>
+By eliminating the need to retrieve objects, organizations reduce operational complexity while improving the speed and reliability of data validation workflows.</p>
+<p>Combined with S3 Batch Operations and Athena, Compute Checksum becomes a powerful tool for modern data governance, compliance, and large-scale integrity verification.</p>
+<hr>
+<h2 id="pre---31--">title: &ldquo;Blog 1&rdquo;
+date: 2025-01-01
+weight: 1
+chapter: false
+pre: &quot; <b> 3.1. </b> &quot;</h2>
+<h1 id="verifying-large-scale-amazon-s3-data-integrity-with-compute-checksum-operation-1">Verifying Large-Scale Amazon S3 Data Integrity with Compute Checksum Operation</h1>
+<p>As data volumes continue to grow, ensuring data integrity has become a critical requirement for organizations across all industries. Traditionally, verifying data integrity required downloading or restoring objects — a process that introduces high cost, operational overhead, and significant latency. With the introduction of <strong>Amazon S3 Compute Checksum</strong> using <strong>S3 Batch Operations</strong>, organizations can now verify data integrity directly at the storage layer, without retrieving the objects.</p>
+<p>This capability makes large-scale checksum validation more efficient, cost-effective, and operationally reliable.</p>
+<hr>
+<h1 id="why-checksums-matter-1">Why Checksums Matter</h1>
+<p>Checksums detect even the smallest change in data — down to a single bit. They serve as the foundation for:</p>
+<ul>
+<li>Detecting corruption during storage or transfer</li>
+<li>Maintaining the reliability of data pipelines</li>
+<li>Supporting compliance, audit trails, and fixity workflows</li>
+<li>Tracking data integrity across its lifecycle</li>
+</ul>
+<p>S3 supports multiple checksum algorithms including SHA-1, SHA-256, MD5, CRC32, CRC32C, and <strong>CRC64NVME</strong>, the latter optimized for extremely large datasets due to its high speed and parallelization capabilities.</p>
+<hr>
+<h1 id="prerequisites-1">Prerequisites</h1>
+<p>Before running Compute Checksum operations, you need:</p>
+<ul>
+<li>Permissions to create and execute S3 Batch Operations jobs</li>
+<li>An IAM role that S3 Batch Operations can assume</li>
+<li>Three buckets: data bucket, manifest bucket, and report bucket</li>
+<li>Amazon Athena access for analyzing report data</li>
+</ul>
+<p>Separating these buckets improves governance and simplifies access control.</p>
+<hr>
+<h1 id="compute-checksum-workflow-1">Compute Checksum Workflow</h1>
+<hr>
+<h2 id="1-create-and-upload-the-manifest-1">1. Create and Upload the Manifest</h2>
+<p>The manifest is a CSV file listing the objects (bucket, key, version) for which you want to compute checksums.<br>
+After creating it, upload it to the <strong>manifest bucket</strong> so Batch Operations can read it.</p>
+<hr>
+<h2 id="2-configure-iam-permissions-1">2. Configure IAM Permissions</h2>
+<h3 id="required-permissions-include-1">Required permissions include:</h3>
+<ul>
+<li>Reading source objects</li>
+<li>Reading the manifest</li>
+<li>Writing the completion report</li>
+</ul>
+<p>If objects are encrypted with SSE-KMS, decryption permissions must also be included.<br>
+The IAM role should be created using the <strong>S3 Batch Operations</strong> use case for proper compatibility.</p>
+<hr>
+<h2 id="3-create-and-run-the-compute-checksum-job-1">3. Create and Run the Compute Checksum Job</h2>
+<p>To run the job:</p>
+<ol>
+<li>Select your manifest file</li>
+<li>Choose <strong>Compute Checksum</strong> as the operation</li>
+<li>Choose:
+<ul>
+<li>Calculation type: <em>Full object</em></li>
+<li>Recommended algorithm: <strong>CRC64NVME</strong></li>
+</ul>
+</li>
+<li>Assign the correct IAM role</li>
+<li>Run the job and monitor its progress</li>
+</ol>
+<p>Batch Operations scales seamlessly, allowing checksum validation for millions or billions of S3 objects.</p>
+<hr>
+<h2 id="4-retrieve-the-completion-report-1">4. Retrieve the Completion Report</h2>
+<p>Once the job finishes:</p>
+<ul>
+<li>Open the job details</li>
+<li>Access the completion report stored in the report bucket</li>
+<li>Copy the S3 URI to use in Athena</li>
+</ul>
+<p>Each line of the report includes bucket, key, version, status, and a JSON field containing checksum results.</p>
+<hr>
+<h2 id="5-analyze-the-report-with-athena-1">5. Analyze the Report with Athena</h2>
+<p>Athena allows you to:</p>
+<ul>
+<li>Create an external table pointing to the report folder</li>
+<li>Query for failed tasks or checksum mismatches</li>
+<li>Filter objects by error codes</li>
+<li>Flatten JSON fields into a structured CSV for downstream analysis or auditing</li>
+</ul>
+<p>This enables fast, serverless analysis of checksum results at scale.</p>
+<hr>
+<h1 id="when-to-use-compute-checksum-1">When to Use Compute Checksum?</h1>
+<p>Compute Checksum is ideal for:</p>
+<ul>
+<li>Long-term archival data validation</li>
+<li>Regulatory compliance (HIPAA, FedRAMP, financial audits)</li>
+<li>Large-scale analytics, ML/AI datasets</li>
+<li>Massive media assets</li>
+<li>Backup validation and fixity workflows</li>
+</ul>
+<p>Any workload that relies on data correctness benefits from automated checksum validation.</p>
+<hr>
+<h1 id="conclusion-1">Conclusion</h1>
 <p>Amazon S3 Compute Checksum Operation provides an efficient, scalable, and cost-effective solution for verifying data integrity across massive datasets.<br>
 By eliminating the need to retrieve objects, organizations reduce operational complexity while improving the speed and reliability of data validation workflows.</p>
 <p>Combined with S3 Batch Operations and Athena, Compute Checksum becomes a powerful tool for modern data governance, compliance, and large-scale integrity verification.</p>
@@ -1742,19 +1854,19 @@ By eliminating the need to retrieve objects, organizations reduce operational co
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1764908739"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1764908739"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1764908739"></script>
-    <script src="../../js/jquery.sticky.js?1764908739"></script>
-    <script src="../../js/featherlight.min.js?1764908739"></script>
-    <script src="../../js/highlight.pack.js?1764908739"></script>
+    <script src="../../js/clipboard.min.js?1764911434"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1764911434"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1764911434"></script>
+    <script src="../../js/jquery.sticky.js?1764911434"></script>
+    <script src="../../js/featherlight.min.js?1764911434"></script>
+    <script src="../../js/highlight.pack.js?1764911434"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1764908739"></script>
-    <script src="../../js/learn.js?1764908739"></script>
-    <script src="../../js/hugo-learn.js?1764908739"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1764911434"></script>
+    <script src="../../js/learn.js?1764911434"></script>
+    <script src="../../js/hugo-learn.js?1764911434"></script>
 
-    <link href="../../mermaid/mermaid.css?1764908739" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1764908739"></script>
+    <link href="../../mermaid/mermaid.css?1764911434" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1764911434"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
